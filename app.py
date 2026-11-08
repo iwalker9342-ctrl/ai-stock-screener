@@ -3,7 +3,24 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 from datetime import datetime
-import requests
+import request
+
+def send_telegram_alert(message):
+    token = st.secrets["TELEGRAM_BOT_TOKEN"]
+    chat_id = st.secrets["TELEGRAM_CHAT_ID"]
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+
+    response = requests.post(
+        url,
+        data={
+            "chat_id": chat_id,
+            "text": message
+        },
+        timeout=10
+    )
+    response.raise_for_status()
+    return response.ok
 
 st.set_page_config(page_title='AI Momentum Stock Screener', page_icon='📈', layout='wide')
 st.title('📈 AI Momentum Stock Screener')
