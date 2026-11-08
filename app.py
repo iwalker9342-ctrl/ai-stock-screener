@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 from datetime import datetime
+import requests
 
 st.set_page_config(page_title='AI Momentum Stock Screener', page_icon='📈', layout='wide')
 st.title('📈 AI Momentum Stock Screener')
