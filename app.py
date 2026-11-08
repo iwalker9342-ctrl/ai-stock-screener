@@ -107,3 +107,19 @@ st.markdown('''### How to interpret the screen
 - **No live news sentiment, earnings classification, intraday VWAP, real-time streaming, broker connection, or auto-trading** is included in this starter version.
 - Data may be delayed or unavailable. Scores can change materially during a trading session. Penny stocks carry substantial liquidity, volatility, and manipulation risk.
 ''')
+
+
+st.markdown("---")
+st.subheader("Advanced Screener Settings")
+
+enable_alerts = st.checkbox(
+    "Enable breakout alerts",
+    value=False
+)
+
+if enable_alerts:
+    st.info(
+        "Breakout monitoring selected. "
+        "Automatic notifications are not yet configured."
+    )
+
