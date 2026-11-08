@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import yfinance as yf
 from datetime import datetime
-import request
+import requests
 
 def send_telegram_alert(message):
     token = st.secrets["TELEGRAM_BOT_TOKEN"]
