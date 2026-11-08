@@ -122,3 +122,25 @@ if enable_alerts:
         "Automatic notifications are not yet configured."
     )
 
+# Breakout alert settings
+st.subheader("🚀 Momentum Breakout Alerts")
+
+min_rvol = st.number_input(
+    "Minimum Relative Volume (RVOL)",
+    min_value=1.0,
+    value=1.5,
+    step=0.1,
+)
+
+min_gain = st.number_input(
+    "Minimum Daily Gain (%)",
+    min_value=0.0,
+    value=5.0,
+    step=0.5,
+)
+
+st.info(
+    f"Alert criteria: Daily gain >= {min_gain}% "
+    f"and RVOL >= {min_rvol}"
+)
+
