@@ -257,7 +257,7 @@ if st.button("Send Breakout Alerts"):
     else:
         st.warning("No stock data available.")
 
-    return response.ok
+    
 
 
 if st.button("🚀 Test Telegram Alert"):
