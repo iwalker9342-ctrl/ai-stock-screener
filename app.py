@@ -258,7 +258,7 @@ if st.button("Send Breakout Alerts"):
         ]
 
         if not breakouts.empty:
-    message = "🚀 STOCK BREAKOUT ALERT"\n\n"       message += breakouts.to_string(index=False)
+    message = "🚀 STOCK BREAKOUT ALERT"\n\n"      message += breakouts.to_string(index=False)
             send_telegram_alert(message)
             st.success("Breakout alert sent!")
         else:
