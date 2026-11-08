@@ -238,11 +238,5 @@ def send_breakout_alert(symbol, price):
     return response.ok
 
 
-if st.success("Telegram alert sent!")
-    try:        
-        send_telegram_alert("TEST", 1.00)
-            "🚀 Test alert from AI Momentum Stock Screener!"
-        )
-        st.success("Telegram alert sent!")
-    except Exception as e:
-        st.error(f"Telegram alert failed: {e}")
+
+    
