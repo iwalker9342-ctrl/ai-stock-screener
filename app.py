@@ -161,3 +161,14 @@ def show_breakout_alert(ticker, daily_gain, rvol):
             f"Gain: {daily_gain:.2f}% | "
             f"RVOL: {rvol:.2f}"
         )
+
+
+# Breakout notification function
+def send_breakout_alert(ticker, price, gain, rvol):
+    message = (
+        f"🚀 BREAKOUT ALERT: {ticker}\n"
+        f"Price: ${price:.2f}\n"
+        f"Daily Gain: {gain:.2f}%\n"
+        f"Relative Volume: {rvol:.2f}x"
+    )
+    return message
