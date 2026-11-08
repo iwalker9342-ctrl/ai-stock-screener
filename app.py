@@ -238,7 +238,7 @@ def send_breakout_alert(symbol, price):
     return response.ok
 
 
-if st.button("Test Telegram Alert"):
+if st.success("Telegram alert sent!")
     try:        
         send_telegram_alert("TEST", 1.00)
             "🚀 Test alert from AI Momentum Stock Screener!"
