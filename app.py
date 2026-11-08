@@ -134,7 +134,6 @@ enable_alerts = st.checkbox(
     value=False
 )
 
-if enable_alerts:
     
 if enable_alerts:
     st.success("Telegram breakout alerts enabled!")
