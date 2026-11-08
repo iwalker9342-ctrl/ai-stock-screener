@@ -283,6 +283,18 @@ if st.button("Test Telegram Alert"):
 
 
 
+def send_breakout_alert(symbol, price, gain, rvol):
+    message = (
+        f"🚀 STOCK BREAKOUT ALERT\n"
+        f"Stock: {symbol}\n"
+        f"Price: ${price:.2f}\n"
+        f"Daily Gain: {gain:.1f}%\n"
+        f"Relative Volume: {rvol:.1f}x"
+    )
+    return send_telegram_message(message)
+
+
+
 
 
 
