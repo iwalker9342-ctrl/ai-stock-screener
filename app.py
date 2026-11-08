@@ -237,6 +237,50 @@ def send_breakout_alert(symbol, price):
 
 
 
+import streamlit as st
+import urllib.request
+import urllib.parse
+import json
+
+def send_telegram_alert(message):
+    try:
+        token = st.secrets["TELEGRAM_BOT_TOKEN"]
+        chat_id = st.secrets["TELEGRAM_CHAT_ID"]
+
+        url = f"https://api.telegram.org/bot{token}/sendMessage"
+
+        data = urllib.parse.urlencode({
+            "chat_id": chat_id,
+            "text": message
+        }).encode("utf-8")
+
+        request = urllib.request.Request(
+            url,
+            data=data,
+            method="POST"
+        )
+
+        with urllib.request.urlopen(request, timeout=10) as response:
+            result = json.load(response)
+
+        return result.get("ok", False)
+
+    except Exception as e:
+        st.error(f"Telegram error: {e}")
+        return False
+
+
+st.subheader("Telegram Alerts")
+
+if st.button("Test Telegram Alert"):
+    if send_telegram_alert("Stock screener test alert!"):
+        st.success("Telegram message sent!")
+    else:
+        st.error("Telegram alert failed.")
+
+
+
+
 
 
 
