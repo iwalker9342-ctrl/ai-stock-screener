@@ -303,6 +303,21 @@ if st.button("🚀 Test Breakout Alert"):
 
 
 
+def check_breakouts(stocks):
+    for stock in stocks:
+        symbol = stock["symbol"]
+        price = stock["price"]
+        gain = stock["gain"]
+        rvol = stock["rvol"]
+
+        if gain >= 5 and rvol >= 2:
+            send_breakout_alert(
+                symbol, price, gain, rvol
+            )
+
+
+
+
 
 
 
