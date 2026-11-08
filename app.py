@@ -148,3 +148,16 @@ st.info(
 # Breakout detection
 def check_breakout(daily_gain, rvol, min_gain, min_rvol):
     return daily_gain >= min_gain and rvol >= min_rvol
+
+
+
+# Display breakout alert
+def show_breakout_alert(ticker, daily_gain, rvol):
+    if enable_alerts and check_breakout(
+        daily_gain, rvol, min_gain, min_rvol
+    ):
+        st.success(
+            f"🚀 BREAKOUT ALERT: {ticker} | "
+            f"Gain: {daily_gain:.2f}% | "
+            f"RVOL: {rvol:.2f}"
+        )
