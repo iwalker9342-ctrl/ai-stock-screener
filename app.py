@@ -295,6 +295,15 @@ def send_breakout_alert(symbol, price, gain, rvol):
 
 
 
+if st.button("🚀 Test Breakout Alert"):
+    if send_breakout_alert("AAPL", 195.50, 5.2, 3.1):
+        st.success("Breakout alert sent!")
+    else:
+        st.error("Breakout alert failed.")
+
+
+
+
 
 
 
