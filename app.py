@@ -172,3 +172,26 @@ def send_breakout_alert(ticker, price, gain, rvol):
         f"Relative Volume: {rvol:.2f}x"
     )
     return message
+
+
+import requests
+
+if st.button("📲 Test Telegram Alert"):
+    token = st.secrets["TELEGRAM_BOT_TOKEN"]
+    chat_id = st.secrets["TELEGRAM_CHAT_ID"]
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+
+    response = requests.post(
+        url,
+        data={
+            "chat_id": chat_id,
+            "text": "🚀 AI Stock Screener Telegram alerts are working!"
+        },
+        timeout=10
+    )
+
+    if response.ok:
+        st.success("Telegram alert sent!")
+    else:
+        st.error("Telegram alert failed. Check your bot settings.")
