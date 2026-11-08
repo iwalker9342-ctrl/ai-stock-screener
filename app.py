@@ -238,5 +238,15 @@ def send_breakout_alert(symbol, price):
     return response.ok
 
 
+if st.button("🚀 Test Telegram Alert"):
+    try:
+        if send_telegram_alert("TEST", 1.00):
+            st.success("Telegram alert sent!")
+        else:
+            st.error("Telegram rejected the alert.")
+    except Exception as e:
+        st.error(f"Telegram alert failed: {e}")
+
+
 
     
