@@ -236,3 +236,13 @@ def send_breakout_alert(symbol, price):
     )
 
     return response.ok
+
+
+if st.button("Test Telegram Alert"):
+    try:
+        send_telegram_alert(
+            "🚀 Test alert from AI Momentum Stock Screener!"
+        )
+        st.success("Telegram alert sent!")
+    except Exception as e:
+        st.error(f"Telegram alert failed: {e}")
