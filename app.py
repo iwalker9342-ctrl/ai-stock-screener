@@ -262,7 +262,7 @@ if st.button("Send Breakout Alerts"):
 
 if st.button("🚀 Test Telegram Alert"):
     try:
-        if send_telegram_alert("TEST", 1.00):
+        if send_telegram_alert("TEST"):
             st.success("Telegram alert sent!")
         else:
             st.error("Telegram rejected the alert.")
