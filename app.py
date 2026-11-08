@@ -109,7 +109,7 @@ else:
             st.dataframe(filtered, use_container_width=True, hide_index=True)
             st.download_button('Download CSV', filtered.to_csv(index=False), 'screener_results.csv', 'text/csv')
             with st.expander('All scored symbols'):
-                                                       st.dataframe(all_df.sort_values('Score / 100', ascending=False), use_container_width=True, hide_index=True)                    
+                                                        st.dataframe(all_df.sort_values('Score / 100', ascending=False), use_container_width=True, hide_index=True)                    
         else:
             st.warning('No data returned. Try again later or change symbols.')
         if errors:
