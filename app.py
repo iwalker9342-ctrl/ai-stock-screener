@@ -237,37 +237,7 @@ def send_breakout_alert(symbol, price):
 
 
 
-# Telegram breakout alerts
-if st.button("Send Breakout Alerts"):
-    if not all_df.empty:
-        breakouts = all_df[
-            (all_df["Score / 100"] >= 80)
-            & (all_df["RVOL"] >= 2)
-        ]
 
-        if not breakouts.empty:
-        message = "🚀 STOCK BREAKOUT ALERT\n\n".       message += breakouts.to_string(index=False)
-
-            if send_telegram_alert(message):
-                st.success("Breakout alert sent!")
-            else:
-                st.error("Telegram alert failed.")
-        else:
-            st.info("No breakouts found.")
-    else:
-        st.warning("No stock data available.")
-
-    
-
-
-        if st.button("🚀 Test Telegram Alert"):
-    try:
-        if send_telegram_alert("TEST"):
-            st.success("Telegram alert sent!")
-        else:
-            st.error("Telegram rejected the alert.")
-    except Exception as e:
-        st.error(f"Telegram alert failed: {e}")
 
 
 
