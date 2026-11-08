@@ -236,6 +236,10 @@ def send_breakout_alert(symbol, price):
     )
 
 
+if st.button("🚀 Test Breakout Alert"):
+    send_breakout_alert("AAPL", 150.00)
+
+
 
 import streamlit as st
 import urllib.request
