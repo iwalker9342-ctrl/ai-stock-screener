@@ -249,4 +249,21 @@ if st.button("🚀 Test Telegram Alert"):
 
 
 
+# Telegram breakout alerts
+if st.button("Send Breakout Alerts"):
+    if not all_df.empty:
+        breakouts = all_df[
+            (all_df["Score / 100"] >= 80)
+            & (all_df["RVOL"] >= 2)
+        ]
+
+        if not breakouts.empty:
+            message = "🚀 STOCK BREAKOUT ALERT\n\n"
+            message += breakouts.to_string(index=False)
+            send_telegram_alert(message)
+            st.success("Breakout alert sent!")
+        else:
+            st.info("No breakouts found.")
+
+
     
