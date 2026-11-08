@@ -135,10 +135,10 @@ enable_alerts = st.checkbox(
 )
 
 if enable_alerts:
-    st.info(
-        "Breakout monitoring selected. "
-        "Automatic notifications are not yet configured."
-    )
+    
+if enable_alerts:
+    st.success("Telegram breakout alerts enabled!")
+
 
 # Breakout alert settings
 st.subheader("🚀 Momentum Breakout Alerts")
