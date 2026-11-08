@@ -196,3 +196,25 @@ if st.button("📲 Test Telegram Alert"):
         st.success("Telegram alert sent!")
     else:
         st.error("Telegram alert failed. Check your bot settings.")
+
+
+def send_breakout_alert(symbol, price):
+    token = st.secrets["TELEGRAM_BOT_TOKEN"]
+    chat_id = st.secrets["TELEGRAM_CHAT_ID"]
+
+    url = f"https://api.telegram.org/bot{token}/sendMessage"
+
+    message = (
+        f"🚀 STOCK BREAKOUT ALERT!\n"
+        f"Stock: {symbol}\n"
+        f"Price: ${price:.2f}\n"
+        f"Momentum breakout detected!"
+    )
+
+    response = requests.post(
+        url,
+        data={"chat_id": chat_id, "text": message},
+        timeout=10
+    )
+
+    return response.ok
