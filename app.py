@@ -144,3 +144,7 @@ st.info(
     f"and RVOL >= {min_rvol}"
 )
 
+
+# Breakout detection
+def check_breakout(daily_gain, rvol, min_gain, min_rvol):
+    return daily_gain >= min_gain and rvol >= min_rvol
